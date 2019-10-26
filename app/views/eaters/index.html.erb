@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Eaters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Delivery address</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eaters.each do |eater| %>
+      <tr>
+        <td><%= eater.name %></td>
+        <td><%= eater.email %></td>
+        <td><%= eater.phone %></td>
+        <td><%= eater.delivery_address %></td>
+        <td><%= eater.notes %></td>
+        <td><%= link_to 'Show', eater %></td>
+        <td><%= link_to 'Edit', edit_eater_path(eater) %></td>
+        <td><%= link_to 'Destroy', eater, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Eater', new_eater_path %>
