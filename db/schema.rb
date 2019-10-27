@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_070938) do
+ActiveRecord::Schema.define(version: 2019_10_27_045938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,26 @@ ActiveRecord::Schema.define(version: 2019_10_26_070938) do
     t.string "phone"
     t.string "address"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cooks_foods", force: :cascade do |t|
+    t.bigint "cook_id"
+    t.bigint "food_id"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cook_id"], name: "index_cooks_foods_on_cook_id"
+    t.index ["food_id"], name: "index_cooks_foods_on_food_id"
+  end
+
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "address"
+    t.integer "vehicle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,4 +70,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_070938) do
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
   end
 
+  add_foreign_key "cooks_foods", "cooks"
+  add_foreign_key "cooks_foods", "foods"
 end

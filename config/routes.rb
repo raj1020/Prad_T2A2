@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cooks_foods
+  resources :drivers
   resources :images
   resources :foods
   resources :cooks
