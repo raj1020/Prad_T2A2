@@ -3,6 +3,7 @@ class CooksController < ApplicationController
 
   # GET /cooks
   # GET /cooks.json
+  
   def index
     @cooks = Cook.all
   end
