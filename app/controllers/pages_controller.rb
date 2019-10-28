@@ -4,4 +4,20 @@ class PagesController < ApplicationController
         
 
     end
+
+    def option
+
+
+    end
+
+    def authenticate
+
+
+    end 
+
+    def guest
+
+
+    end 
+    
 end  
