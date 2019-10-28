@@ -9,7 +9,7 @@
 #require "faker"
 50.times do 
     Cook.create(name: Faker::Name.name, phone: Faker::PhoneNumber.cell_phone, address: Faker::Address.full_address, email: Faker::Internet.email)
-    Eater.create(name: Faker::Name.name, email: Faker::Internet.email, phone: Faker::PhoneNumber.cell_phone, delivery_address: Faker::Address.full_address)
+    #Eater.create(name: Faker::Name.name, email: Faker::Internet.email, phone: Faker::PhoneNumber.cell_phone, delivery_address: Faker::Address.full_address)
     Food.create(name: Faker::Food.dish, category: Faker::Restaurant.type )
     Driver.create(name: Faker::Name.name, email: Faker::Internet.email, phone: Faker::PhoneNumber.cell_phone, address: Faker::Address.full_address, vehicle: Faker::Number.within(range: 1..3))
 
